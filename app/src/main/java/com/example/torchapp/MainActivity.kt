@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var cameraId: String
 
     //private lateinit var context: Context
+    //
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
