@@ -49,7 +49,15 @@ class MainActivity : AppCompatActivity() {
         toggleButton.setOnCheckedChangeListener { _: CompoundButton, switch: Boolean ->
             //@Override
             //fun onCheckedChanged(buttonView: CompoundButton, isChecked: Boolean) {
-            var t = time.text.toString().toLong() * 1000
+            var t: Long = if (time.text.toString().trim().isNotEmpty()) {
+                time.text.toString().toLong() * 1000
+            } else {
+                Long.MAX_VALUE * 1000
+            }
+            /*if (t.trim().isNotEmpty()) {
+                t = t.toLong() * 1000
+            }*/
+
             countDownTimer(t)
             switchFlash(switch)
             //}
